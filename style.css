@@ -1,0 +1,99 @@
+:root {
+}
+
+/* Reset Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.l-container-center {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  min-height: 100dvh;
+}
+.tip-calculator {
+  background-color: rosybrown;
+  padding: 32px;
+}
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+input[id="bill"],
+input[id="personNum"] {
+  display: flex;
+  justify-content: space-between;
+  /* position: relative; */
+}
+
+input[id="bill"]::before,
+input[id="personNum"]::before {
+  content: url("./images/icon-dollar.svg");
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+}
+input .tip-calculator__input {
+  /* display: flex; */
+  /* flex-direction: column; */
+  gap: 40px;
+}
+.tip-calculator__bill {
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+.tip-calculator__tip-percent {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+}
+.tip-calculator__tip-percent input:hover {
+  cursor: pointer;
+}
+.tip-calculator__tip-percent input:focus {
+  cursor: pointer;
+  background-color:;
+}
+.tip-calculator__result {
+  background-color: cadetblue;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tip-calculator__tip-amount {
+}
+.tip-calculator__per-person {
+}
+
+/* utitlity classes */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+}
