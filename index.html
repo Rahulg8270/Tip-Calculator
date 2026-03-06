@@ -15,64 +15,137 @@
     <title>Frontend Mentor | Tip calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="tip-calculator-wrapper l-container-center">
-      <h1>
-        <img src="./images/logo.svg" alt="" />
-      </h1>
-      <section class="tip-calculator">
-        <form action="">
-          <div class="tip-calculator__input flex-col">
-            <div class="tip-calculator__bill flex-col">
-              <label for="bill">Bill</label>
-              <input type="text" id="bill" required placeholder="0" />
-            </div>
-            <fieldset class="tip-calculator__tip-percent">
-              <legend>Select Tip %</legend>
-              <select name="" id="tip-Input">
-                <option selected value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="Custom">Custom</option>
-              </select>
+    <main class="l-container-center">
+      <article class="calculator">
+        <form action="" class="calculator__form">
+          <div class="calculator__input">
+            <fieldset class="calculator__bill">
+              <label for="bill" class="label-text">Bill</label>
+              <div class="calculator__input-wrapper">
+                <img src="./images/icon-dollar.svg" />
+                <input
+                  type="number"
+                  class="calculator__real-input"
+                  id="bill"
+                  placeholder="0"
+                />
+              </div>
             </fieldset>
-            <div class="tip-calculator__total-people flex-col">
-              <label for="personNum">
-                No of People
-                <span class="error"></span>
-              </label>
-              <input
-                type="number"
-                id="personNum"
-                required
-                placeholder="0"
-                id="personNum"
-              />
-            </div>
+            <fieldset class="calculator__tip-container">
+              <legend class="label-text">Select Tip%</legend>
+              <div class="calculator__tip-layout">
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value"
+                    type="radio"
+                    name="tip"
+                    id="tip-5"
+                    value="5"
+                  />
+                  <label for="tip-5" class="calculator__tip-label">5%</label>
+                </div>
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value"
+                    type="radio"
+                    name="tip"
+                    id="tip-10"
+                    value="10"
+                  />
+                  <label for="tip-10" class="calculator__tip-label">10%</label>
+                </div>
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value"
+                    type="radio"
+                    name="tip"
+                    id="tip-15"
+                    value="10"
+                  />
+                  <label for="tip-15" class="calculator__tip-label">15%</label>
+                </div>
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value"
+                    type="radio"
+                    name="tip"
+                    id="tip-25"
+                    value="25"
+                  />
+                  <label for="tip-25" class="calculator__tip-label">25%</label>
+                </div>
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value"
+                    type="radio"
+                    name="tip"
+                    id="tip-50"
+                    value="50"
+                  />
+                  <label for="tip-50" class="calculator__tip-label">50%</label>
+                </div>
+                <div class="calculator__tip-option">
+                  <input
+                    class="calculator__tip-value calculator__tip-value--custom"
+                    type="radio"
+                    name="tip"
+                    id="tip-custom"
+                  />
+                  <label for="tip-custom" class="calculator__tip-label"
+                    >Custom</label
+                  >
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="calculator__total-person">
+              <div class="calculator__input-selection">
+                <label for="people" class="label-text">No of People</label>
+                <span>Can't be zero</span>
+              </div>
+              <div class="calculator__input-wrapper">
+                <img src="./images/icon-person.svg" alt="" />
+                <input
+                  type="number"
+                  class="calculator__real-input"
+                  id="people"
+                  placeholder="0"
+                />
+              </div>
+            </fieldset>
           </div>
-
-          <div class="tip-calculator__result">
-            <div class="tip-calculator__result-wrap">
-              <div class="tip-calculator__Tip-amount grid-2">
-                <p class="flex-col">Tip Amount / <span>person</span></p>
-                <output class="tip-perPerson"></output>
-              </div>
-              <div class="tip-calculator__per-person grid-2">
-                <p class="flex-col">Total / <span>person</span></p>
-                <output class="total-perPerson"></output>
-              </div>
+          <div class="calculator__result">
+            <div class="calculator__result-wrapper">
+              <span class="calculator__output-label">
+                <strong>Tip Amount</strong>
+                <em>/ person</em>
+              </span>
+              <output class="calculator__output-num">$0.0</output>
             </div>
 
-            <button class="tip-calculator__resetBtn" type="reset">reset</button>
+            <div class="calculator__result-wrapper">
+              <span class="calculator__output-label">
+                <strong>Total</strong>
+                <em>/ person</em>
+              </span>
+              <output class="calculator__output-num">$0.0</output>
+            </div>
+            <button class="calculator__reset-btn" type="reset">RESET</button>
           </div>
         </form>
-      </section>
+      </article>
     </main>
-
     <script src="index.js"></script>
   </body>
 </html>
+
+<!-- what do we want now? -->
+<!-- we want to capture the value from the radio button first  -->
