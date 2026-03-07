@@ -109,7 +109,7 @@
             <fieldset class="calculator__total-person">
               <div class="calculator__input-selection">
                 <label for="people" class="label-text">No of People</label>
-                <span>Can't be zero</span>
+                <span class="calculator__label-error">Can't be zero</span>
               </div>
               <div class="calculator__input-wrapper">
                 <img src="./images/icon-person.svg" alt="" />
@@ -123,20 +123,22 @@
             </fieldset>
           </div>
           <div class="calculator__result">
-            <div class="calculator__result-wrapper">
-              <span class="calculator__output-label">
-                <strong>Tip Amount</strong>
-                <em>/ person</em>
-              </span>
-              <output class="calculator__output-num">$0.0</output>
-            </div>
+            <div class="calculator__result__outline">
+              <div class="calculator__result-wrapper">
+                <span class="calculator__output-label">
+                  <strong>Tip Amount</strong>
+                  <em>/ person</em>
+                </span>
+                <output class="calculator__output-num">$0.0</output>
+              </div>
 
-            <div class="calculator__result-wrapper">
-              <span class="calculator__output-label">
-                <strong>Total</strong>
-                <em>/ person</em>
-              </span>
-              <output class="calculator__output-num">$0.0</output>
+              <div class="calculator__result-wrapper">
+                <span class="calculator__output-label">
+                  <strong>Total</strong>
+                  <em>/ person</em>
+                </span>
+                <output class="calculator__output-num">$0.0</output>
+              </div>
             </div>
             <button class="calculator__reset-btn" type="reset">RESET</button>
           </div>
