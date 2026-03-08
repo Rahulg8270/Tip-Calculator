@@ -1,13 +1,10 @@
 const form = document.querySelector(".calculator__form");
 const totalBill = document.querySelector(".calculator__real-input--bill");
 const totalPeople = document.querySelector(".calculator__real-input--people");
-const tipContainer = document.querySelector(".calculator__tip-layout");
 const resetBtn = document.querySelector(".calculator__reset-btn");
 
 const tipAmount_perPersonEl = document.querySelector("#tip-amount-perPerson");
 const totalBill_perPersonEl = document.querySelector("#total-amount-perPerson");
-console.log(tipAmount_perPersonEl);
-console.log(totalBill_perPersonEl);
 
 let selectTipOptionEl;
 let selectTipEl;
@@ -37,23 +34,19 @@ function validateInput(e) {
   );
 
   if (selectedInput.type === "number" && Number(selectedInput.value) === 0) {
-    targetError.classList.toggle("error-show");
+    targetError.classList.add("error-show");
+    targetError.classList.remove("error-hide");
     targetError.textContent = `Can't be zero`;
   } else if (
     selectedInput.type === "number" &&
     Number(selectedInput.value) !== 0
   ) {
-    targetError.classList.toggle("error-hide");
+    targetError.classList.remove;
+    ("error-show");
+    targetError.classList.add("error-hide");
     targetError.textContent = ``;
   }
 }
-
-// function selectTipingPercentage(e) {}
-
-// function calculateResult(e) {
-// console.log(`bill is: ${totalBill.value}`);
-// console.log(`no of people are: ${totalPeople.value}`);
-// }
 
 function calculateResult(e) {
   if (e.target.type === "radio") {

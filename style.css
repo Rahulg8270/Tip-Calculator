@@ -252,7 +252,6 @@ fieldset {
   .calculator__result-wrapper {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    /* grid-template-rows:; */
     align-items: center;
     gap: var(--space-l);
   }
