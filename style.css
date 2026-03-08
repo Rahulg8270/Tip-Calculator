@@ -168,7 +168,11 @@ fieldset {
   justify-content: space-between;
   align-items: center;
 }
-.calculator__label-error {
+.error-hide {
+  display: none;
+}
+.error-show {
+  display: block;
   color: var(--orange-400);
   font-weight: var(--font-bold);
 }
@@ -188,7 +192,7 @@ fieldset {
 }
 .calculator__result-wrapper {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: var(--space-l);
 }
@@ -214,6 +218,10 @@ fieldset {
   color: var(--Green-400);
   font-weight: var(--font-bold);
   font-size: var(--font-lg-fluid);
+
+  /* white-space: nowrap; */
+  /* overflow-x: auto; */
+  /* text-overflow: ellipsis; */
 }
 
 @media screen and (min-width: 48rem) {

@@ -29,12 +29,15 @@
         <form action="" class="calculator__form">
           <div class="calculator__input">
             <fieldset class="calculator__bill">
-              <label for="bill" class="label-text">Bill</label>
+              <div class="calculator__input-selection">
+                <label for="bill" class="label-text">Bill</label>
+                <span class="calculator__label-error error-hide"></span>
+              </div>
               <div class="calculator__input-wrapper">
                 <img src="./images/icon-dollar.svg" />
                 <input
                   type="number"
-                  class="calculator__real-input"
+                  class="calculator__real-input calculator__real-input--bill"
                   id="bill"
                   placeholder="0"
                 />
@@ -69,7 +72,7 @@
                     type="radio"
                     name="tip"
                     id="tip-15"
-                    value="10"
+                    value="15"
                   />
                   <label for="tip-15" class="calculator__tip-label">15%</label>
                 </div>
@@ -99,6 +102,7 @@
                     type="radio"
                     name="tip"
                     id="tip-custom"
+                    value=""
                   />
                   <label for="tip-custom" class="calculator__tip-label"
                     >Custom</label
@@ -109,15 +113,17 @@
             <fieldset class="calculator__total-person">
               <div class="calculator__input-selection">
                 <label for="people" class="label-text">No of People</label>
-                <span class="calculator__label-error">Can't be zero</span>
+                <span class="calculator__label-error"></span>
               </div>
               <div class="calculator__input-wrapper">
                 <img src="./images/icon-person.svg" alt="" />
                 <input
                   type="number"
-                  class="calculator__real-input"
+                  class="calculator__real-input calculator__real-input--people"
                   id="people"
                   placeholder="0"
+                  min="1"
+                  max="99"
                 />
               </div>
             </fieldset>
@@ -129,7 +135,9 @@
                   <strong>Tip Amount</strong>
                   <em>/ person</em>
                 </span>
-                <output class="calculator__output-num">$0.0</output>
+                <output class="calculator__output-num" id="tip-amount-perPerson"
+                  >$0.0</output
+                >
               </div>
 
               <div class="calculator__result-wrapper">
@@ -137,7 +145,11 @@
                   <strong>Total</strong>
                   <em>/ person</em>
                 </span>
-                <output class="calculator__output-num">$0.0</output>
+                <output
+                  class="calculator__output-num"
+                  id="total-amount-perPerson"
+                  >$0.0</output
+                >
               </div>
             </div>
             <button class="calculator__reset-btn" type="reset">RESET</button>
