@@ -24,7 +24,7 @@
   --space-xs: clamp(0.8rem, 0.5rem + 0.8vw, 1rem);
   --space-s: clamp(1rem, 0.8rem + 1vw, 1.5rem);
   --space-m: clamp(1.5rem, 1.1rem + 2vw, 2.5rem);
-  --space-l: clamp(2rem, 1.5rem + 3vw, 5rem);
+  --space-l: clamp(3rem, 1.5rem + 3vw, 5rem);
 }
 
 *::after,
@@ -69,13 +69,13 @@ fieldset {
 }
 .label-text {
   font-size: var(--font-md-fluid);
-  /* line-height: 1rem; */
   color: var(--Grey-500);
   letter-spacing: 0;
   font-weight: var(--font-bold);
-  /* margin-block-end: 1rem; */
 }
-
+.label-tip {
+  margin-block-end: var(--space-xs);
+}
 /* external layout */
 .calculator {
   background-color: var(--White);
@@ -186,23 +186,29 @@ fieldset {
   padding: var(--space-s);
   border-radius: var(--border-rad);
 }
+.calculator__result-outline {
+  display: grid;
+  gap: var(--space-m);
+}
 .calculator__tip-value--custom:checked + .calculator__tip-label {
   background-color: var(--White);
   color: var(--Green);
 }
 .calculator__result-wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
   align-items: center;
-  gap: var(--space-l);
 }
 .calculator__output-label {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
 }
 .calculator__output-label em {
   color: var(--Grey-500);
   font-size: 0.8rem;
+  font-weight: var(--font-bold);
 }
 .calculator__reset-btn {
   padding-inline: 2.5rem;
@@ -235,6 +241,24 @@ fieldset {
     gap: var(--space-s);
   }
   .calculator__result {
-    gap: var(--space-s);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+  .calculator__result-outline {
+    display: grid;
+    gap: 0;
+  }
+  .calculator__result-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    /* grid-template-rows:; */
+    align-items: center;
+    gap: var(--space-l);
+  }
+  .calculator__output-label {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
   }
 }
