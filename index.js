@@ -41,7 +41,7 @@ function validateInput(e) {
     selectedInput.type === "number" &&
     Number(selectedInput.value) !== 0
   ) {
-    targetError.classList.remove;
+    targetError.classList.remove("error-show");
     ("error-show");
     targetError.classList.add("error-hide");
     targetError.textContent = ``;
@@ -59,9 +59,8 @@ function calculateResult(e) {
   const persons = Number(totalPeople.value) || 0;
 
   if (bill && persons && selectedTipValue) {
-    console.log("both the bill, person and radio button is clicked!");
     // console.log(totalBill_perPersonEl);
-    // console.log(tipAmount_perPersonEl);
+
     const tipAmount_perPersonValue = (
       (selectedTipValue * bill) /
       100 /
@@ -74,7 +73,3 @@ function calculateResult(e) {
 
   return selectedTipValue;
 }
-
-// can use a conditional operation to know if the custom button is clicked and make it into a input field while typing the input
-
-// so we need to combine the logic of getting the bill
