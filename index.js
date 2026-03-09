@@ -10,8 +10,6 @@ let selectTipOptionEl;
 let selectTipEl;
 let selectedTipValue;
 
-const tipButtons = document.querySelectorAll(`input[type='radio']`);
-
 resetBtn.addEventListener("click", () => {
   tipAmount_perPersonEl.innerHTML = `$0.0`;
   totalBill_perPersonEl.innerHTML = `$0.0`;
@@ -55,20 +53,23 @@ function calculateResult(e) {
     selectedTipValue = Number(selectTipEl.value) || 0;
   }
 
-  const bill = Number(totalBill.value) || 0;
-  const persons = Number(totalPeople.value) || 0;
+  const billNums = Number(totalBill.value) || 0;
+  const personsNums = Number(totalPeople.value) || 0;
 
-  if (bill && persons && selectedTipValue) {
-    // console.log(totalBill_perPersonEl);
-
+  if (billNums && personsNums && selectedTipValue) {
     const tipAmount_perPersonValue = (
-      (selectedTipValue * bill) /
+      (selectedTipValue * billNums) /
       100 /
-      persons
-    ).toFixed(1);
-    const billAmount_perPersonValue = (bill / persons).toFixed(1);
+      personsNums
+    ).toFixed(2);
+
+    const billAmount_perPersonValue = Number(billNums / personsNums).toFixed(2);
+
+    const totalBill_perPersonValue = (
+      Number(billAmount_perPersonValue) + Number(tipAmount_perPersonValue)
+    ).toFixed(2);
     tipAmount_perPersonEl.innerHTML = `$${tipAmount_perPersonValue}`;
-    totalBill_perPersonEl.innerHTML = `$${billAmount_perPersonValue}`;
+    totalBill_perPersonEl.innerHTML = `$${totalBill_perPersonValue}`;
   }
 
   return selectedTipValue;
